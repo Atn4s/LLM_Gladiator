@@ -1,0 +1,12 @@
+/bin
+/images/
+/jsons
+/include
+/lib
+/lib64
+/resultados_antigos
+/results/
+/share
+.env
+.pyvenv.cfg
+__pycache__

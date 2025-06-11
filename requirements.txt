@@ -1,0 +1,10 @@
+pandas
+google.genetativeai
+Pillow
+dotenv
+openai
+mistralai
+azure-ai-ml
+azure.ai.inference
+xlsxwriter
+textwrap3
