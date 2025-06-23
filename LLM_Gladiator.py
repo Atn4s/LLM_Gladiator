@@ -9,18 +9,18 @@ from llm_wrappers.github_wrapper import run_model_with_image
 
 modelos = {
     "Gemini 2.0 Flash": gemini_flash_extract,
-    #"Gemini 2.5 Pro": gemini_pro_extract,
+    "Gemini 2.5 Pro": gemini_pro_extract,
     "Gemma 3" : gemma3_extract,           
-    #"GitHub [Llama-3.2-11B-Vision-Instruct]": partial(run_model_with_image, "meta/Llama-3.2-11B-Vision-Instruct"),       
-    #"GitHub [Llama-3.2-90B-Vision-Instruct]": partial(run_model_with_image, "meta/Llama-3.2-90B-Vision-Instruct"),
-    #"GitHub [Llama-4-Scout-17B-16E-Instruct]": partial(run_model_with_image, "meta/Llama-4-Scout-17B-16E-Instruct"),
-    #"GitHub [Llama-4-Maverick-17B-128E-Instruct-FP8]": partial(run_model_with_image, "meta/Llama-4-Maverick-17B-128E-Instruct-FP8"),    
+    "GitHub [Llama-3.2-11B-Vision-Instruct]": partial(run_model_with_image, "meta/Llama-3.2-11B-Vision-Instruct"),       
+    "GitHub [Llama-3.2-90B-Vision-Instruct]": partial(run_model_with_image, "meta/Llama-3.2-90B-Vision-Instruct"),
+    "GitHub [Llama-4-Scout-17B-16E-Instruct]": partial(run_model_with_image, "meta/Llama-4-Scout-17B-16E-Instruct"),
+    "GitHub [Llama-4-Maverick-17B-128E-Instruct-FP8]": partial(run_model_with_image, "meta/Llama-4-Maverick-17B-128E-Instruct-FP8"),    
     "GitHub [Mistral Medium 3]": partial(run_model_with_image, "mistral-ai/mistral-medium-2505"),    
-    #"GitHub [OpenAI GPT-4.1]": partial(run_model_with_image, "openai/gpt-4.1"),
-    #"GitHub [OpenAI gpt-4o]": partial(run_model_with_image, "openai/gpt-4o"),
-    #"GitHub [OpenAI gpt-4o-mini]": partial(run_model_with_image, "openai/gpt-4o-mini"),
-    #"GitHub [Phi-3.5-vision-instruct]": partial(run_model_with_image, "microsoft/Phi-3.5-vision-instruct"),    
-    #"GitHub [Phi-4-multimodal-instruct]": partial(run_model_with_image, "microsoft/Phi-4-multimodal-instruct"),       
+    "GitHub [OpenAI GPT-4.1]": partial(run_model_with_image, "openai/gpt-4.1"),
+    "GitHub [OpenAI gpt-4o]": partial(run_model_with_image, "openai/gpt-4o"),
+    "GitHub [OpenAI gpt-4o-mini]": partial(run_model_with_image, "openai/gpt-4o-mini"),
+    "GitHub [Phi-3.5-vision-instruct]": partial(run_model_with_image, "microsoft/Phi-3.5-vision-instruct"),    
+    "GitHub [Phi-4-multimodal-instruct]": partial(run_model_with_image, "microsoft/Phi-4-multimodal-instruct"),       
     "Mistral Pixtral-12b-2409": mistral_pixtral_extract    
 
     # "GitHub [Cohere-embed-v3-multilingual]": partial(run_model_with_image, "Cohere-embed-v3-multilingual"),        
@@ -40,11 +40,7 @@ for img_index, img_name in enumerate(os.listdir("images")):
         except Exception as e:
             texto = str(e)
 
-        resultado = {
-            "imagem": img_name,
-            "modelo": nome_modelo,
-            "texto_extraido": texto,            
-        }
+        resultado = texto
 
         # Nome do arquivo: imagem0_gemini.json
         nome_base = os.path.splitext(img_name)[0].lower().replace(" ", "_")

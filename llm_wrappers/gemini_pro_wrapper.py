@@ -9,15 +9,15 @@ genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 def gemini_pro_extract(image_path: str):
     model = genai.GenerativeModel('models/gemini-2.5-pro-preview-05-06')
     img = Image.open(image_path)
-    prompt = """Extraia todo o texto e informações úteis da imagem fornecida. Para cada informação encontrada, retorne:
+    prompt = """Extraia todo o texto e informações úteis da imagem fornecida.
 
-    - O valor extraído
-    - O nome do campo correspondente (ex: "cnpj_estabelecimento", "valor_total", etc.)
-    - As coordenadas aproximadas do texto na imagem, no formato: [x1, y1, x2, y2] (bounding box)
+IMPORTANTE:
+- Responda APENAS com um JSON válido como para o esquema abaixo.
+- Não inclua informações adicionais, formatação Markdown, ```json```, nem explicações.
+- O JSON deve conter todos os campos especificados abaixo, mesmo que alguns estejam vazios.
+- Use exatamente o formato JSON abaixo para cada dado encontrado:
 
-    Responda no seguinte formato JSON:
-
-    {
+{
   "fields": [
     {
       "name": "chave_acesso",
