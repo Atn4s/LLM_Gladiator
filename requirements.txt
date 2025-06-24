@@ -1,10 +1,6 @@
-pandas
-google.genetativeai
+google-generativeai
 Pillow
-dotenv
-openai
+python-dotenv
+azure-ai-inference
+azure-core
 mistralai
-azure-ai-ml
-azure.ai.inference
-xlsxwriter
-textwrap3
