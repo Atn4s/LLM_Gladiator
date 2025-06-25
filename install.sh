@@ -8,5 +8,12 @@ echo "🚀 Iniciando setup do LLM_Gladiator!"
 echo "🐍 Criando ambiente virtual 'LLM_Gladiator' na pasta atual"
 python3.12 -m venv LLM_Gladiator
 source LLM_Gladiator/bin/activate
+    mv llm_wrappers LLM_Gladiator/
+    mv limpeza_json.py LLM_Gladiator/
+    mv llm_gladiator.py LLM_Gladiator/
+    pip install -r requirements.txt
+    mv requirements.txt LLM_Gladiator/
+    cd LLM_Gladiator/
+    mkdir images
 
 echo "🏁 Setup do LLM_Gladiator foi finalizado! Verifique se você possui o .env inserido no projeto! Ele possui as chaves API"

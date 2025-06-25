@@ -107,11 +107,26 @@ def processar_arquivo(caminho_arquivo):
 
     return dados_limpos
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Uso: python3 codigo_json.py caminho1 [caminho2 ...]")
-        sys.exit(1)
+def processar_pasta_results():
+    pasta = "results"
+    if not os.path.isdir(pasta):
+        print(f"[Erro] Pasta '{pasta}' não encontrada.")
+        return
 
-    caminhos = sys.argv[1:]
-    for caminho in caminhos:
-        processar_arquivo(caminho)
+    arquivos_json = [f for f in os.listdir(pasta) if f.endswith(".json")]
+    if not arquivos_json:
+        print(f"[Aviso] Nenhum arquivo .json encontrado na pasta '{pasta}'.")
+        return
+
+    for nome_arquivo in arquivos_json:
+        caminho_completo = os.path.join(pasta, nome_arquivo)
+        processar_arquivo(caminho_completo)
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        caminhos = sys.argv[1:]
+        for caminho in caminhos:
+            processar_arquivo(caminho)
+    else:
+        print("[Info] Nenhum caminho fornecido. Processando arquivos da pasta 'results'...")
+        processar_pasta_results()

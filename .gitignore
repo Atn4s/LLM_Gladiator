@@ -8,5 +8,6 @@
 /results/
 /share
 .env
-.pyvenv.cfg
+pyvenv.cfg
 __pycache__
+resultados_limpos/
