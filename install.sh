@@ -9,13 +9,4 @@ echo "🐍 Criando ambiente virtual 'LLM_Gladiator' na pasta atual"
 python3.12 -m venv LLM_Gladiator
 source LLM_Gladiator/bin/activate
 
-# 2 Modifica a estrutura do PATH para que o LLM_Gladiator fique organizado
-echo "🔧 Movendo diretórios para dentro do PaddleOCR e instalando o restante das dependencias!"
-    mv llm_wrappers/ LLM_Gladiator/
-    mv limpeza_json.py LLM_Gladiator/
-    mv LLM_Gladiator.py LLM_Gladiator/     
-    pip install -r requirements.txt        
-    mv requirements.txt LLM_Gladiator/    
-    cd LLM_Gladiator/     
-
-echo "🏁 Setup do LLM_Gladiator foi finalizado!"
+echo "🏁 Setup do LLM_Gladiator foi finalizado! Verifique se você possui o .env inserido no projeto! Ele possui as chaves API"
