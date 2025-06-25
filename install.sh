@@ -17,6 +17,7 @@ source LLM_Gladiator/bin/activate
     cd LLM_Gladiator/
     mkdir images
 
-echo "🏁 Setup do LLM_Gladiator foi finalizado! Verifique se você possui o .env inserido no projeto! Ele possui as chaves API"
-echo "🔄 Para utilizar o LLM_Gladiator, insira as imagens que deseja processar denntro da pasta images e execute o script processa_LLM.sh"
+clear
+echo "🏁 Setup do LLM_Gladiator foi finalizado! Verifique se você possui o .env inserido no venv! Ele possui as chaves API"
+echo "🔄 Para utilizar o LLM_Gladiator, insira as imagens que deseja processar dentro da pasta images e execute o script processa_LLM.sh"
 echo "O script processa_LLM.sh irá processar as imagens e gerar o JSON formatado com os resultados de forma automatica."
