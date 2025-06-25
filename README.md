@@ -46,7 +46,7 @@ Esse script:
 
     Prepara a estrutura de diretórios
 
-🔑 Configuração de API Keys
+## 🔑 Configuração de API Keys
 
 Antes de qualquer execução, crie um arquivo .env com suas chaves de API:
 ```
@@ -55,20 +55,20 @@ MISTRAL_API_KEY=your_mistral_key
 GITHUB_API_KEY=your_github_key
 ```
 
-🖼️ Como usar
-1. Preparando as imagens
+##  🖼️ Como usar
+## 1. Preparando as imagens
 
 Coloque as imagens a serem processadas na pasta:
 ```
 images/
 ```
-2. Executando o projeto
+##  2. Executando o projeto
 
 ⚠️ Antes de rodar, ative o ambiente virtual:
 
 ```source LLM_Gladiator/bin/activate```
 
-📌 Modo automático (recomendado)
+##  📌 Modo automático (recomendado)
 
 ```bash processa_LLM.sh```
 
@@ -86,7 +86,7 @@ Esse script irá:
 
         Salvar os arquivos limpos na pasta resultados_limpos/
 
-✋ Modo manual
+## ✋ Modo manual
 
 Você também pode rodar o script diretamente:
 
@@ -94,7 +94,7 @@ Você também pode rodar o script diretamente:
 
 Ele executará os wrappers conforme definidos na pasta llm_wrappers/.
 📁 Estrutura do Projeto
-
+```
 LLM_Gladiator.py             # Script principal de execução
 limpeza_json.py              # Limpeza e organização dos JSONs gerados
 llm_wrappers/                # Wrappers de configuração para cada modelo
@@ -107,7 +107,7 @@ llm_wrappers/                # Wrappers de configuração para cada modelo
 images/                      # Pasta com as imagens a serem processadas
 results/                     # Resultados brutos gerados pelos modelos
 resultados_limpos/           # Resultados limpos e estruturados
-
-📌 Observações Finais
+```
+## 📌 Observações Finais
 
     O projeto ainda está em desenvolvimento — fique à vontade para sugerir melhorias!
