@@ -10,9 +10,10 @@ python3.12 -m venv LLM_Gladiator
 source LLM_Gladiator/bin/activate
     mv llm_wrappers LLM_Gladiator/
     mv limpeza_json.py LLM_Gladiator/
-    mv llm_gladiator.py LLM_Gladiator/
+    mv LLM_Gladiator.py .py LLM_Gladiator/
     pip install -r requirements.txt
     mv requirements.txt LLM_Gladiator/
+    mv processa_LLM.sh LLM_Gladiator/
     cd LLM_Gladiator/
     mkdir images
 
