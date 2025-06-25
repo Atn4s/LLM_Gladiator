@@ -5,6 +5,6 @@ clear
 source bin/activate
 
 echo "🚀 Iniciando processamento de imagens com LLM_Gladiator!"
-python3 LLM_Gladiator.py 
+python3.12 LLM_Gladiator.py 
 echo "🏁 Processamento concluído! Agora a formatação do JSON será realizada"
-python3 limpeza_json.py
+python3.12 limpeza_json.py
