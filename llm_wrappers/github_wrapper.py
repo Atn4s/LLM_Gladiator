@@ -14,7 +14,7 @@ from azure.core.credentials import AzureKeyCredential
 # Carregar variáveis de ambiente
 load_dotenv("./env")
 
-# Variáveis
+# Variáveis de acordo com as instruções do Github Marketplace 
 API_TOKEN = os.getenv("GITHUB_API_KEY")  # ou "GITHUB_TOKEN", conforme teu .env
 ENDPOINT = "https://models.github.ai/inference"
 
@@ -24,6 +24,8 @@ client = ChatCompletionsClient(
     credential=AzureKeyCredential(API_TOKEN),
 )
 
+# Abaixo é uma função que processa a imagem com o modelo do GitHub passado por parâmetro, a imagem é passada como argumento para o modelo em questão
+# e retorna um JSON com os dados extraídos da imagem.
 def run_model_with_image(model_name, *args):
     if len(args) == 1:
         prompt = """Extraia todo o texto e informações úteis da imagem fornecida.

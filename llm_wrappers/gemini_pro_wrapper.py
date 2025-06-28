@@ -3,9 +3,12 @@ from PIL import Image
 import os
 from dotenv import load_dotenv
 
+# Carregar as variáveis de ambiente do arquivo .env no qual deve conter a chave de API do Google 
 load_dotenv()
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 
+# Função para extrair informações de uma imagem, baseado nas instruções do modelo Gemini 2.5 Pro
+# A função recebe o caminho da imagem como parâmetro e retorna um JSON com os dados extraídos.
 def gemini_pro_extract(image_path: str):
     model = genai.GenerativeModel('models/gemini-2.5-pro-preview-05-06')
     img = Image.open(image_path)

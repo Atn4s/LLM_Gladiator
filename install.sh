@@ -11,6 +11,7 @@ source LLM_Gladiator/bin/activate
     mv llm_wrappers LLM_Gladiator/
     mv limpeza_json.py LLM_Gladiator/
     mv LLM_Gladiator.py LLM_Gladiator/
+    echo "📦 Instalando dependências do LLM_Gladiator"
     pip install -r requirements.txt
     mv requirements.txt LLM_Gladiator/
     mv processa_LLM.sh LLM_Gladiator/
@@ -18,6 +19,4 @@ source LLM_Gladiator/bin/activate
     mkdir images
 
 clear
-echo "🏁 Setup do LLM_Gladiator foi finalizado! Verifique se você possui o .env inserido no venv! Ele possui as chaves API"
-echo "🔄 Para utilizar o LLM_Gladiator, insira as imagens que deseja processar dentro da pasta images e execute o script processa_LLM.sh"
-echo "O script processa_LLM.sh irá processar as imagens e gerar o JSON formatado com os resultados de forma automatica."
+echo "🏁 Setup do LLM_Gladiator foi finalizado!"

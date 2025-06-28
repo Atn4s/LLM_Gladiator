@@ -76,11 +76,11 @@ Esse script irá:
 
     Executar LLM_Gladiator.py
 
-    Processar todas as imagens da pasta images/ com os modelos disponíveis
+    Processar as imagens da pasta images/ com os modelos disponíveis
 
     Salvar os resultados em .json (um por modelo) na pasta results/
 
-    Executar limpeza_json.py para:
+    e executa a limpeza_json.py para cada um dos modelos processados garantindo:
 
         Organizar e estruturar os .json
 

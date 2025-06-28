@@ -3,11 +3,11 @@ import os
 from mistralai import Mistral
 from dotenv import load_dotenv
 
+# Carregar as variáveis de ambiente do arquivo .env no qual deve conter a chave de API da MistralAI
 load_dotenv()
 
 def mistral_pixtral_extract(image_path: str):
-    """Extrai texto e informações úteis de uma imagem usando o modelo Pixtral da MistralAI."""
-    
+    # Extrai texto e informações úteis de uma imagem usando o modelo Pixtral da MistralAI.
     # Encode da imagem em base64
     try:
         with open(image_path, "rb") as image_file:
@@ -17,15 +17,16 @@ def mistral_pixtral_extract(image_path: str):
     except Exception as e:
         raise RuntimeError(f"Erro ao codificar a imagem: {e}")
     
-    # Configuração do cliente Mistral
+    # Configuração do cliente Mistral baseado na cahve API
     api_key = os.getenv("MISTRAL_API_KEY")
     if not api_key:
         raise ValueError("Erro: MISTRAL_API_KEY não encontrada nas variáveis de ambiente.")
     
+    # modelo Pixtral 12b utilizando via API
     model = "pixtral-12b-2409"
     client = Mistral(api_key=api_key)
 
-    # Monta mensagem para o modelo
+    # Monta mensagem para o modelo, seguindo as instruções do Pixtral
     messages = [
         {
             "role": "user",
@@ -148,7 +149,7 @@ Por favor, preencha apenas os campos que encontrar informações correspondentes
         }
     ]
 
-    # Requisição ao modelo
+    # Requisição ao modelo Mistral baseado em API
     try:
         chat_response = client.chat.complete(
             model=model,
