@@ -6,4 +6,4 @@ source bin/activate
 
 echo "🚀 Iniciando processamento de imagens com LLM_Gladiator!"
 python3.12 LLM_Gladiator.py 
-echo "🏁 Processamento concluído!
+echo "🏁 Processamento concluído!"
